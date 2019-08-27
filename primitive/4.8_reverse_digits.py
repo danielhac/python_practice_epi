@@ -5,7 +5,7 @@
 
 # Convert num to a string in order to manipulte it
 # Return the converted string to int, starting from the end of the string
-# And strip the '-' sign if any
+# And strip the '-' sign if any to process and add it back necessary
 def reverse_digits(num):
     str_num = str(num)
 
