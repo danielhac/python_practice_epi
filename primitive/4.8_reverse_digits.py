@@ -3,7 +3,9 @@
 
 # For example, the reverse of 42 is 24, and the reverse of -314 is -413.
 
-
+# Convert num to a string in order to manipulte it
+# Return the converted string to int, starting from the end of the string
+# And strip the '-' sign if any
 def reverse_digits(num):
     str_num = str(num)
 
