@@ -23,6 +23,28 @@ def decimal_arr_brute_force(arr):
     print(arr)
 
 
+# One pass solution: increment last elem by 1
+# Loop reversed until arr[1], 
+# and when arr[i] equals 10, set it to 0 and increment arr[i-1] by 1
+# Otherwise, break out of loop and check if first elem is 10,
+# if so, set it to 1 and append a 0 to end of arr
+def decimal_arr(arr):
+    arr[-1] += 1
+    
+    for i in reversed(range(1, len(arr))):
+        if arr[i] == 10:
+            arr[i] = 0
+            arr[i-1] += 1
+        else: break
+
+    if arr[0] == 10:
+        arr[0] = 1
+        arr.append(0)
+    
+    print(arr)
+
+
+
 # arr = [1,2,9]
 #     [1,2,10]
 #     [1,3,0]
@@ -31,4 +53,4 @@ arr = [9,9]
 #     [9,10]
 #     [10,0]
 #     []
-decimal_arr_brute_force(arr)
+decimal_arr(arr)
