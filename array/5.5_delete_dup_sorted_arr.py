@@ -20,11 +20,11 @@
 #   shift elem left, insert 0 at end of array and
 #   reduce length by 1 since we don't need to check for that elem
 def delete_dup_sorted_arr(arr):
+    valid = 1
     i = 0
     length = len(arr) -1
     while i < length:
         if arr[i] == arr[i+1]:
-            print(arr[i])
             j = i
             while j < length:
                 arr[j] = arr[j+1]                
@@ -33,8 +33,11 @@ def delete_dup_sorted_arr(arr):
             length -= 1
         else:
             i += 1
+            valid += 1
 
     print(arr)
+    print("valid: " + str(valid))
+
 
 
 # O(n) solution: 2 passes
@@ -55,9 +58,11 @@ def delete_dup_sorted_arr2(arr):
         j += 1
     
     print(arr)
+    print("valid: " + str(len(dictionary)))
 
 
 arr = [2,3,5,5,7,11,11,11,13]
 # arr = [2,2,2,2]
+# arr = [2]
 
 delete_dup_sorted_arr2(arr)
