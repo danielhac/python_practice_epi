@@ -37,10 +37,27 @@ def delete_dup_sorted_arr(arr):
     print(arr)
 
 
+# O(n) solution: 2 passes
+# Dictionary used to store values within first loop and then set elem to 0.
+#   Now that all elems in arr is set to zero, 
+#   loop again to set values in elem from dictionary.
+def delete_dup_sorted_arr2(arr):
+    dictionary = {}
 
+    for i in range(len(arr)):
+        if arr[i] not in dictionary:
+            dictionary[arr[i]] = 1
+        arr[i] = 0
+
+    j = 0
+    for key in dictionary:
+        arr[j] = key
+        j += 1
+    
+    print(arr)
 
 
 arr = [2,3,5,5,7,11,11,11,13]
 # arr = [2,2,2,2]
 
-delete_dup_sorted_arr(arr)
+delete_dup_sorted_arr2(arr)
