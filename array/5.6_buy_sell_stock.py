@@ -9,7 +9,7 @@
 
 
 # O(n^2): Brute force:
-# Checks all elems after cur elem for max profit
+# Checks all elems after cur elem for max profit in a double while loop
 def buy_and_sell_stock_once(prices):
     max_profit = 0.0
 
@@ -25,7 +25,21 @@ def buy_and_sell_stock_once(prices):
     print(max_profit)
 
 
+# O(n): Checks all elems after cur elem for max profit in a single while loop
+def buy_and_sell_stock_once2(prices):
+    max_profit = 0.0
+
+    i = 0
+    while i < len(prices) - 1:
+        if max(prices[i+1:]) - prices[i] > max_profit:
+            max_profit = max(prices[i+1:]) - prices[i]
+        i += 1
+    
+    print(max_profit)
+
+
+
 prices = [310,315,275,295,260,270,290,230,255,250]
 # prices = [0.2, 0.1]
 
-buy_and_sell_stock_once(prices)
+buy_and_sell_stock_once2(prices)
