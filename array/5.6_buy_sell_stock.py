@@ -39,7 +39,8 @@ def buy_and_sell_stock_once2(prices):
     print(max_profit)
 
 
-# O(n) time
+# O(n) time: in one pass, save lowest price on every iteration and 
+# check if current val minus lowest is higher than max_profit.
 def buy_and_sell_stock_once3(prices):
     max_profit = 0.0
     low = float('inf')
